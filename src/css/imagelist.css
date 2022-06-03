@@ -34,3 +34,11 @@
     aspect-ratio: 1/1;
     margin: auto;
 }
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ==================*/
+@media screen and (max-width: 600px) {
+    .imageList_container {    
+        padding-top: 0;
+        margin: 1rem;
+    }
+}

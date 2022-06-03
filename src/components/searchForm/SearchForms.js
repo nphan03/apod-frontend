@@ -78,7 +78,7 @@ const handleCheck = (e) => {
       <div className="specificdateform">
         <h3>Choose The Date You Want To See Picture </h3> 
         <input type="checkbox" id="btwDate" name='btwDate' value="btwDate" onChange={handleCheck}/>
-        <label htmlFor="btwdate"> Search Images on Date Range </label>
+        <label htmlFor="btwdate" className="searchform__btwdate_label"> Search Images on Date Range </label>
         {!isBtwDate && <Calendar onChange={handleDateChange} id="specform" minDate={new Date("06-16-1995")}/>}
         {isBtwDate && <Calendar onChange={handlefromtoDateChange}  returnValue={"range"} selectRange={true} minDate={new Date("06-16-1995")}/>}
       </div>

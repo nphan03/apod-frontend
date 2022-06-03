@@ -1,8 +1,15 @@
+/**************Image Nav*****************/
+#forms {
+    float:left;
+    width: 40%;
+}
+
 /*********CALENDAR***********/
 .react-calendar {
     border-radius: 2rem;
     background: var(--color-bg-variant);
     border: 1px solid transparent;
+    margin-top: 15px;
 }
 
 .react-calendar__navigation button,
@@ -25,4 +32,18 @@
 
 h3 {
     padding-bottom: 2rem;
+}
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ==================*/
+@media screen and (max-width: 600px) {
+    #forms {
+        float: none;
+        width: 100%; 
+    }
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
