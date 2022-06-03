@@ -21,7 +21,7 @@ const Details = () => {
     .get(`${URL}/comments/${currentImg.date}`)
     .then(results => {
       results.data.forEach(cmt => {
-        currentImgComments.push(cmt);
+        currentImgComments.unshift(cmt);
       });
       setComments(currentImgComments);
     })
@@ -50,17 +50,17 @@ const Details = () => {
         date: currentImg.date,
         text: newComment,
     };
-
-    axios.post("/comments", comment)
+    
+    axios.post(`${URL}/comments`, comment)
     .then(res=>{
         if(Array.isArray(res.data)){
             setErr_mess(res.data);
         }else{
-          setErr_mess(["Sent Comment. Thanks"])
-          clonedComments.push(res.data);
+          clonedComments.unshift(res.data);
         }
         setNewNickname("")
         setNewEmail("")
+        setNewComment("")
         setComments(clonedComments)
     })
     .catch(err=>console.log(err));

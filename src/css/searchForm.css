@@ -34,6 +34,14 @@ h3 {
     padding-bottom: 2rem;
 }
 
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ==================*/
+@media screen and (max-width: 1024px) {
+    #forms {
+        width: 50%; 
+    }
+}
+
+
 /* ========================== MEDIA QUERIES (SMALL DEVICES) ==================*/
 @media screen and (max-width: 600px) {
     #forms {

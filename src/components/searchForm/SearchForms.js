@@ -50,7 +50,6 @@ const SearchForms = () => {
       axios
       .get(`${URL}/images/${fromDate}&${toDate}`)
       .then(result => {
-        console.log(result)
         if(typeof(result.data[0])=="object"){
           setErr_mess([])
           setImages(result.data)

@@ -10,7 +10,6 @@
 
 .imageList_container::-webkit-scrollbar {
     display: block;
-    background-color: var(--color-light);
     border-radius: 10px;
 }
 
@@ -33,6 +32,12 @@
     width: 200px;
     aspect-ratio: 1/1;
     margin: auto;
+}
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ==================*/
+@media screen and (max-width: 1024px) {
+    .imageList_container {    
+        padding-top: 185px;
+    }
 }
 
 /* ========================== MEDIA QUERIES (SMALL DEVICES) ==================*/

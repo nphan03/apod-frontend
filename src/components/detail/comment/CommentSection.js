@@ -1,4 +1,5 @@
 import React from "react";
+import CommentList from "./CommentList";
 
 const CommentSection = (formInfo) => {
   const {
@@ -36,17 +37,7 @@ const CommentSection = (formInfo) => {
           </div>
       </section>
 
-      <section className="cmtList">
-          <h3>All Comments</h3>
-          <div className="comments">
-              {comments.reverse().map((cmt,index) => 
-                  <div key={index} className='comment_card'>
-                      <p className="username">{cmt.username}</p>
-                      <p className="cmttext">{cmt.text}</p>
-                  </div>
-              )}
-          </div>
-      </section>
+      <CommentList comments={comments}/>
     </div>
   </div>
 }
