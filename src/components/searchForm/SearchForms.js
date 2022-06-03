@@ -30,7 +30,7 @@ const SearchForms = () => {
         setImages([result.data])
         setCurrentImg(result.data)
       }else{
-        setErr_mess({err_mess: result.data})
+        setErr_mess(result.data)
       }
     })
     .catch(err => {
@@ -38,11 +38,17 @@ const SearchForms = () => {
     })
   },[date, setImages, setCurrentImg])
 
+  const minusToDate = (date) => {
+    const newDate = new Date(date.toISOString())
+    newDate.setDate( newDate.getDate() - 1);
+    return newDate.toISOString()
+  }
+
   const handlefromtoDateChange = (e) => {
     const formatedFromDate = e[0].toISOString().slice(0, 10)
-    const formatedToDate = (e[1]).toISOString().slice(0, 10)
+    const formatedToDate = minusToDate(e[1]).slice(0, 10)
     setFromDate(formatedFromDate)
-    setToDate(formatedToDate,)
+    setToDate(formatedToDate)
   }
 
   useEffect(()=>{
@@ -79,7 +85,7 @@ const handleCheck = (e) => {
         <input type="checkbox" id="btwDate" name='btwDate' value="btwDate" onChange={handleCheck}/>
         <label htmlFor="btwdate" className="searchform__btwdate_label"> Search Images on Date Range </label>
         {!isBtwDate && <Calendar onChange={handleDateChange} id="specform" minDate={new Date("06-16-1995")}/>}
-        {isBtwDate && <Calendar onChange={handlefromtoDateChange}  returnValue={"range"} selectRange={true} minDate={new Date("06-16-1995")}/>}
+        {isBtwDate && <Calendar onChange={handlefromtoDateChange}  returnValue={"range"} selectRange={true} minDate={new Date("06-16-1995")} />}
       </div>
       
       <div className="message">{err_mess.map((msg,index) => <p key={index}>{msg}</p>)}</div>
