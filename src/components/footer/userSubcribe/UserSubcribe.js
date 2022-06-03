@@ -1,46 +1,40 @@
-import React from "react";
-import axios from "axios";
+import React, { useState } from 'react'
+import axios from "axios"
+const URL = process.env.REACT_APP_URL
 
-class UserSubcribe extends React.Component {
-    
-    constructor(props){
-        super(props);
+const UserSubcribe = () => {
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleUserSubcribeSubmit = (e) => {
+    e.preventDefault();
         
-        this.state = {
-            email:'',
-            mess:''
-        };
-        
-        this.handleEmailChange=this.handleEmailChange.bind(this);
-        this.handleUserSubcribeSubmit=this.handleUserSubcribeSubmit.bind(this);
-    }
-    
-    handleEmailChange(e){
-        this.setState({email: e.target.value});
-    }
-    handleUserSubcribeSubmit(e){
-        e.preventDefault();
-        
-        axios.post(`/subcribe`, {email:this.state.email})
-        .then(res => {
-            this.setState({email:'', mess:res.data});
-        })
-        .catch(err => console.log(err));
-    }
-    render(){
-        return <div className="user-register">
-            <h4>Please Subcribe With Your Email</h4>
-            <form onSubmit={this.handleUserSubcribeSubmit}>
-                <input type="email" onChange={this.handleEmailChange} value={this.state.email} id="subcribeEmail" placeholder="Your email"></input>
-                <input type="submit" value="Subcribe" className="btn btn-primary"></input>
-            </form>
-            
-            <div className="message">
-                {this.state.mess}
-            </div>
-            
-        </div>;
-    }
+    axios
+    .post(`${URL}/subcribe`, {email: email})
+    .then(res => {
+      setEmail('')
+      setMessage(res.data)
+    })
+    .catch(err => console.log(err));
+  }
+
+  return (
+    <div className="user-register">
+      <h4>Please Subcribe With Your Email</h4>
+      <form onSubmit={handleUserSubcribeSubmit}>
+          <input type="email" onChange={handleEmailChange} value={email} id="subcribeEmail" placeholder="Your email"></input>
+          <input type="submit" value="Subcribe" className="btn btn-primary"></input>
+      </form>
+
+      <div className="message">
+          {message}
+      </div>
+    </div>
+  )
 }
 
-export default UserSubcribe;
+export default UserSubcribe

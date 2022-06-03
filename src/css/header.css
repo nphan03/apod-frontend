@@ -2,7 +2,7 @@
 .header{
     width: 100vw;
     height: 100vh;
-    background: url('../../assets/header-bg.jpg') no-repeat top center fixed;
+    background: url('../assets/header-bg.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
