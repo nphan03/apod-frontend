@@ -106,3 +106,8 @@ img {
     object-fit: cover;
 }
 
+.message {
+    margin: 10px 0;
+    background: var(--color-primary);
+    font-weight: bold;
+}

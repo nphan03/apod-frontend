@@ -15,6 +15,11 @@ const Details = () => {
   const { currentImg } = useContext(ImageContext)
 
   useEffect(() => {
+    setNewNickname("")
+    setNewEmail("")
+    setNewComment("")
+    setErr_mess([]);
+
     const currentImgComments = [];
 
     axios
@@ -57,11 +62,12 @@ const Details = () => {
             setErr_mess(res.data);
         }else{
           clonedComments.unshift(res.data);
+          setNewNickname("")
+          setNewEmail("")
+          setNewComment("")
+          setErr_mess([]);
+          setComments(clonedComments)
         }
-        setNewNickname("")
-        setNewEmail("")
-        setNewComment("")
-        setComments(clonedComments)
     })
     .catch(err=>console.log(err));
   }
