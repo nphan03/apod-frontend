@@ -1,0 +1,58 @@
+/*Perfect Full Viewport Background Image*/
+.header{
+    width: 100vw;
+    height: 100vh;
+    background: url('../../assets/header-bg.jpg') no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    height: 100vh;
+    width: fit-content;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+
+    padding: 5rem 15rem 2rem 5rem;
+    font-size: 4rem;
+}
+
+.headerFirstLetter {
+    font-size: 5rem;
+}
+
+.scroll__down {
+    position: absolute;
+    right: 10rem;
+    bottom: 5rem;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+a {
+    color: var(--color-white);
+}
+
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ==================*/
+@media screen and (max-width: 1024px) {
+    h1 {
+        padding: 1rem 2rem 1rem 2rem;
+        font-size: 2rem;
+        line-height: normal;
+    }
+    .headerFirstLetter {
+        font-size: 3.5rem;
+    }
+}
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ==================*/
+@media screen and (max-width: 600px) {
+    h1 {
+        padding: 2.5rem 2rem 1rem 2.5rem;
+        font-size: 2.5rem;
+    }
+    .headerFirstLetter {
+        font-size: 5rem;
+    }
+}

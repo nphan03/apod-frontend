@@ -1,0 +1,111 @@
+h2 {
+    text-align: center;
+    padding: 2rem;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.content__details {
+    display: grid;
+    grid-template-columns: 60% auto;
+    gap: 5rem;
+}
+
+.photographer {
+    color: var(--color-primary);
+    padding: 1.5rem 0;
+}
+
+/***********COMMENT SECTION*************/
+.comment-section {
+    padding: 2rem;
+}
+.comment__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    overflow: hidden;
+}
+
+.details input,
+.details textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary-variant);
+    resize: none;
+    color: var(--color-white);
+}
+
+/********COMMENT LIST**********/
+.comments {
+    height: 400px;
+    overflow: scroll;
+      
+}
+
+.comment_card {
+    font-size: 1rem;
+    padding: 1rem;
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    text-align: center;
+    user-select: none;
+    margin-top: 1rem;
+}
+
+.username {
+    width: 4rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background: var(--color-primary);
+}
+
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ==================*/
+@media screen and (max-width: 1024px) {
+    .details {
+        padding: 1rem;
+    }
+    .content__details {
+        display: block;
+    }
+    /***********COMMENT SECTION*************/
+    .comment__content {
+        display: block;    
+    }
+    .comment-section {
+        padding-left: 5rem;
+        padding-right: 5rem; 
+    }
+    .cmtList{
+        padding: 1rem 2rem 0 2rem;
+    }
+}
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ==================*/
+@media screen and (max-width: 600px) {
+    h1 {
+        padding: 2.5rem 2rem 1rem 2.5rem;
+        font-size: 2.5rem;
+    }
+    .headerFirstLetter {
+        font-size: 5rem;
+    }
+    /***********COMMENT SECTION*************/
+
+    .comment-section {
+        padding-left: 0;
+        padding-right: 0; 
+    }
+    .cmtList{
+        padding: 1rem 0 0 0;
+    }
+}
