@@ -46,8 +46,6 @@ const SearchForms = () => {
   }
 
   useEffect(()=>{
-    console.log(fromDate)
-    console.log(toDate)
     if( (Date.parse(fromDate)) <= (Date.parse(toDate)) ){ //check valid range of date before send the request
       axios
       .get(`${URL}/images/${fromDate}&${toDate}`)

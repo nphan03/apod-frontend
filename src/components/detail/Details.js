@@ -16,11 +16,10 @@ const Details = () => {
 
   useEffect(() => {
     const currentImgComments = [];
-    console.log(currentImg.date)
+
     axios
     .get(`${URL}/comments/${currentImg.date}`)
     .then(results => {
-      console.log(results)
       results.data.forEach(cmt => {
         currentImgComments.push(cmt);
       });
