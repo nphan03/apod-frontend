@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react"
 import axios from "axios"
 import Calendar from 'react-calendar'
 import { ImageContext } from '../App'
-const URL = process.env.REACT_APP_URL
+const URL = process.env.REACT_APP_BACKEND_URL
 
 const SearchForms = () => {
   const [date, setDate] = useState('')
@@ -34,7 +34,9 @@ const SearchForms = () => {
       }
     })
     .catch(err => {
-      console.log(err)
+      if(err.code === 'ERR_BAD_REQUEST') {
+        setErr_mess(["Image for tomorrow is not available yet"])
+      }
     })
   },[date, setImages, setCurrentImg])
 

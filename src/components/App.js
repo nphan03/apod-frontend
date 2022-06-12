@@ -5,7 +5,7 @@ import ImageList from "./imageList/ImageList";
 import SearchForms from "./searchForm/SearchForms.js";
 import Details from "./detail/Details.js";
 import Footer from "./footer/Footer.js";
-const URL = process.env.REACT_APP_URL
+const URL = process.env.REACT_APP_BACKEND_URL
 
 export const ImageContext = React.createContext();
 
@@ -20,6 +20,7 @@ const App = () => {
       setImages(newImages)
     })
     .catch(err => {
+        console.log(URL)
         console.log(err)
     })
   })
