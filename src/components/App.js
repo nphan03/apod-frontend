@@ -13,7 +13,7 @@ const App = () => {
   const [images, setImages] = useState([])
   const [currentImg, setCurrentImg] = useState(() => {
     axios
-    .get(`${URL}/images`)
+    .get(`https://alice-apod-backend.herokuapp.com/images`)
     .then(serverResponseObject => {
       const newImages = [ ...images, serverResponseObject.data]
       setCurrentImg(serverResponseObject.data)

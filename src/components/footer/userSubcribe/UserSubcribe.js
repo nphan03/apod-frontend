@@ -14,7 +14,7 @@ const UserSubcribe = () => {
     e.preventDefault();
         
     axios
-    .post(`${URL}/subcribe`, {email: email})
+    .post(`https://alice-apod-backend.herokuapp.com/subcribe`, {email: email})
     .then(res => {
       setEmail('')
       setMessage(res.data)

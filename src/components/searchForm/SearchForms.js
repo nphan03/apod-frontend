@@ -23,7 +23,7 @@ const SearchForms = () => {
 
   useEffect(()=>{
     axios
-    .get(`${URL}/images/${date}`)
+    .get(`https://alice-apod-backend.herokuapp.com/images/${date}`)
     .then(result => {
       if(!Array.isArray(result.data)){
         setErr_mess([])
@@ -56,7 +56,7 @@ const SearchForms = () => {
   useEffect(()=>{
     if( (Date.parse(fromDate)) <= (Date.parse(toDate)) ){ //check valid range of date before send the request
       axios
-      .get(`${URL}/images/${fromDate}&${toDate}`)
+      .get(`https://alice-apod-backend.herokuapp.com/images/${fromDate}&${toDate}`)
       .then(result => {
         if(typeof(result.data[0])=="object"){
           setErr_mess([])

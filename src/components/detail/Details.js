@@ -23,7 +23,7 @@ const Details = () => {
     const currentImgComments = [];
 
     axios
-    .get(`${URL}/comments/${currentImg.date}`)
+    .get(`https://alice-apod-backend.herokuapp.com/comments/${currentImg.date}`)
     .then(results => {
       results.data.forEach(cmt => {
         currentImgComments.unshift(cmt);
@@ -56,7 +56,7 @@ const Details = () => {
         text: newComment,
     };
     
-    axios.post(`${URL}/comments`, comment)
+    axios.post(`https://alice-apod-backend.herokuapp.com/comments`, comment)
     .then(res=>{
         if(Array.isArray(res.data)){
             setErr_mess(res.data);
