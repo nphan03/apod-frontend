@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react"
 import axios from "axios"
 import Calendar from 'react-calendar'
 import { ImageContext } from '../App'
-const URL = process.env.REACT_APP_BACKEND_URL
 
 const SearchForms = () => {
   const [date, setDate] = useState('')

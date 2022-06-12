@@ -3,7 +3,6 @@ import Content from "./content/Content.js";
 import axios from "axios";
 import CommentSection from "./comment/CommentSection.js";
 import { ImageContext } from '../App'
-const URL = process.env.REACT_APP_BACKEND_URL
 
 const Details = () => {
   const [newNickname, setNewNickname] = useState('')
